@@ -1,9 +1,11 @@
 import React from 'react'
+import useStyles from './styles';
 
-function post() {
+function Post() {
+  const classes = useStyles();
   return (
     <div>post</div>
   )
 }
 
-export default post
+export default Post

@@ -3,7 +3,6 @@ import postMessage from '../models/postMessage.js';
 export const getPosts = async (req, res) =>{
     try{
         const postMessages = await postMessage.find({});
-        console.log(postMessages);
         res.status(200).json(postMessages);
     }
     catch(error){
@@ -12,12 +11,18 @@ export const getPosts = async (req, res) =>{
 }
 
 export const createPosts = async (req, res) =>{
-    const post = req.body;
-    const newPosts = new postMessage(post);
+    const createpost = req.body;
+   // const newPosts = new postMessage(post);
     try{
-        await newPosts.save();
-        res.status(201).json(newPost);
+        let post = await postMessage.create({
+            creator:createpost.creator,
+            title:createpost.title,
+            message:createpost.message,
+            tags:createpost.tags,
+            selectedFile:createpost["selectedFile"].base64,
+        });
+        res.status(201).json(post);
     }catch(error){
-        res.status(404).json({message: error.message});
+        res.status(404).json({message: error.message,});
     }
 }
