@@ -25,6 +25,7 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
 
     if (currentId === 0) {
+      console.log(postData);
       dispatch(createPost(postData));
       clear();
     } else {
