@@ -27,6 +27,7 @@ const App = () => {
       <div>
         <Search/>
       </div>
+      <h1>All Memories</h1>
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>

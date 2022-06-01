@@ -75,12 +75,6 @@ export const likePost = async (req, res) => {
 }
 
 export const search = async (req, res) => {
-    console.log(req.body);
-    try{
-
-    }catch{
-
-    }
 }
 
 export default router;
