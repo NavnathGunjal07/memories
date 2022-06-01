@@ -74,5 +74,13 @@ export const likePost = async (req, res) => {
     res.json(updatedPost);
 }
 
+export const search = async (req, res) => {
+    console.log(req.body);
+    try{
+
+    }catch{
+
+    }
+}
 
 export default router;

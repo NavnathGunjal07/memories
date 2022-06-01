@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE,SEARCH } from '../constants/actionTypes';
 
 import * as api from '../api/index.js';
 
@@ -21,6 +21,15 @@ export const createPost = (post) => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const searchResult = (searchKey)=> async (dispatch) => {
+  try{
+    const {data} = await api.searchResult(searchKey);
+    dispatch({type: SEARCH, payload: data});
+  }catch (error) {
+
+  }
+}
 
 export const updatePost = (id, post) => async (dispatch) => {
     try {

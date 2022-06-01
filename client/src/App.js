@@ -5,6 +5,7 @@ import './index.css'
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
+import Search from './components/Search/Search';
 import useStyles from './styles';
 import memories from './images/memories.png';
 
@@ -23,6 +24,9 @@ const App = () => {
         <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
         <img className={classes.image} src={memories} alt="icon" height="60" />
       </AppBar>
+      <div>
+        <Search/>
+      </div>
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>
